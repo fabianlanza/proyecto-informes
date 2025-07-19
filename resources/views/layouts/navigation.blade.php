@@ -20,13 +20,11 @@
 
                     {{-- Observación de Informe --}}
                     <x-nav-link :href="route('observarInforme.index')" :active="request()->routeIs('observarInforme.index')" class="text-white">
-                        {{ __('Observación de Informe') }}
+                        {{ __('Informe de Terna') }}
                     </x-nav-link>
 
                     {{-- Subir Informe --}}
-                    <x-nav-link :href="route('subirInforme.create')" :active="request()->routeIs('subirInforme.create')" class="text-white">
-                        {{ __('Subir Informe') }}
-                    </x-nav-link>
+                    {{-- SE ELIMINO LA SECCION DE SUBIR INFORME EN EL NAV BAR PARA QUE SOLO SE PUEDA SUBIR AL MOMENTO DE SUBIR UN INFORME --}}
 
                     {{-- Información Terna --}}
                     <x-nav-link :href="route('informacionTerna.index')" :active="request()->routeIs('informacionTerna.index')" class="text-white">

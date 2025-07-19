@@ -12,6 +12,7 @@
             </button>
         </div>
 
+
         <!-- Tabla -->
         <div class="overflow-x-auto shadow-md sm:rounded-lg">
             <table id="search-table" class="min-w-full text-gray-800 bg-gray-200">
@@ -94,6 +95,9 @@
             </table>
         </div>
     </div>
+
+    <!--FINAL DE LA TABAL DE TERNAS -->
+
 
     <!-- Modal Agregar Terna -->
     <div id="add-terna-modal" tabindex="-1" aria-hidden="true"
