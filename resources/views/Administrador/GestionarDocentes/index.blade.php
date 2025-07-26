@@ -18,7 +18,7 @@
             <table id="search-table" class="min-w-full text-gray-800 bg-gray-200">
                 <thead style="background-color: #004CBE;" class="text-xs uppercase text-white">
                     <tr>
-                        <th class="px-6 py-3">N° Cuenta</th>
+                        <th class="px-6 py-3">N° Empleado</th>
                         <th class="px-6 py-3">Nombre</th>
                         <th class="px-6 py-3">Email</th>
                         <th class="px-6 py-3">Telefono</th>
