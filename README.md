@@ -1,61 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistema de Gestión de Informes de Práctica
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este sistema es una aplicación web desarrollada para optimizar el proceso de seguimiento, revisión y aprobación de informes de práctica profesional. Facilita la interacción entre **Alumnos**, **Docentes** y **Administradores**, permitiendo una gestión digital y centralizada de la documentación académica.
 
-## About Laravel
+## 🚀 Características Principales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+El sistema gestiona tres roles principales con funcionalidades específicas:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🎓 Alumno
+- **Subida de Informes**: Carga de informes de práctica en formato PDF.
+- **Seguimiento de Estado**: Visualización del estado actual de la revisión (En revisión, Aprobado, Observado).
+- **Feedback**: Recepción de observaciones y correcciones por parte de los docentes.
+- **Información de Terna**: Consulta de los docentes asignados a su comité de evaluación (Terna).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 👨‍🏫 Docente
+- **Revisión de Alumnos**: Listado de alumnos asignados para tutoría o revisión.
+- **Visor de Documentos**: Visualización de los informes PDF directamente en el navegador.
+- **Evaluación**: Herramientas para realizar observaciones y calificar el desempeño.
+- **Historial**: Registro de revisiones realizadas.
 
-## Learning Laravel
+### 🛡️ Administrador
+- **Gestión de Usuarios**: Creación y administración de cuentas de Alumnos, Docentes y Administrativos.
+- **Asignación de Ternas**: Configuración de los comités de evaluación para cada alumno.
+- **Gestión Académica**: Administración de Facultades y Campus.
+- **Supervisión Global**: Acceso a todos los informes y estados del sistema.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Tecnologías Utilizadas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Este proyecto está construido con un stack tecnológico moderno y robusto:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Backend**: [Laravel 12](https://laravel.com) - Framework de PHP para aplicaciones web seguras y escalables.
+- **Frontend**: [Blade](https://laravel.com/docs/blade) (Motor de plantillas) + [Tailwind CSS](https://tailwindcss.com) (Estilos).
+- **Base de Datos**: MySQL / MariaDB.
+- **Autenticación**: Laravel Breeze.
+- **Testing**: [Pest PHP](https://pestphp.com).
+- **Manejo de Archivos**: Almacenamiento seguro de PDFs.
 
-## Laravel Sponsors
+## 💻 Instalación y Configuración
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Sigue estos pasos para desplegar el proyecto en tu entorno local:
 
-### Premium Partners
+1.  **Clonar el Repositorio**
+    ```bash
+    git clone https://github.com/tu-usuario/proyecto-informes.git
+    cd proyecto-informes
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2.  **Instalar Dependencias de PHP**
+    ```bash
+    composer install
+    ```
 
-## Contributing
+3.  **Instalar Dependencias de Frontend**
+    ```bash
+    npm install
+    npm run build
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4.  **Configuración del Entorno**
+    Copia el archivo de ejemplo y genera la clave de la aplicación:
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+    *Asegúrate de configurar tus credenciales de base de datos (DB_DATABASE, DB_USERNAME, etc.) en el archivo `.env`.*
 
-## Code of Conduct
+5.  **Base de Datos**
+    Ejecuta las migraciones y los seeders (datos de prueba):
+    ```bash
+    php artisan migrate --seed
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6.  **Ejecutar el Servidor**
+    ```bash
+    php artisan serve
+    ```
+    El sistema estará disponible en `http://localhost:8000`.
 
-## Security Vulnerabilities
+## 🔒 Seguridad y Privacidad
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Este sistema fue desarrollado con fines académicos y profesionales.
+- **Nota sobre Seguridad**: Si planeas desplegar este proyecto en un entorno de producción, asegúrate de realizar una auditoría de seguridad y cambiar todas las credenciales predeterminadas.
+- **Datos Sensibles**: El código fuente no contiene datos reales de estudiantes ni contraseñas.
